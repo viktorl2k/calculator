@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECHNER PROJECT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+   <script>
+    function appendOperation(operation){
+       document.getElementById('resultArea').innerHTML +=operation }
+       function calculateResult(){
+        let container = document.getElementById('resultArea')
+        let result = eval(container.innerHTML)
+        container.innerHTML = result;} 
+        function deletelast(){
+            let container = document.getElementById('resultArea')
+            if(container.innerHTML.endsWith(' ')) {
+                container.innerHTML = container.innerHTML.slice(0, -3);
+            } else {container.innerHTML = container.innerHTML.slice(0, -1);}
+            
+
+        }
+
+
+   </script>
+</head>
+
+
+<body>
+<div id="resultArea">
+
+</div>
+
+    
+
+<table>
+    <tr>
+        <Td></Td>
+        <td></td>
+        <td></td>
+        <td onclick="deletelast()">DEl</td>
+    </tr>
+<tr>
+    
+    <td class="numbers" onclick="appendOperation(7)">7</td>
+    <td class="numbers" onclick="appendOperation(8)">8</td>
+    <td class="numbers" onclick="appendOperation(9)">9</td>
+    <td id="slash" onclick="appendOperation(' / ')">/</td>
+   
+    
+</tr>
+<tr>
+    <td class="numbers" onclick="appendOperation(4)">4</td>
+    <td class="numbers" onclick="appendOperation(5)">5</td>
+    <td class="numbers" onclick="appendOperation(6)">6</td>
+    <td id="multiply" onclick="appendOperation(' * ')">x</td>
+</tr>
+<tr>
+    <td class="numbers" onclick="appendOperation(1)">1</td>
+    <td class="numbers" onclick="appendOperation(2)">2</td>
+    <td class="numbers" onclick="appendOperation(3)">3</td>
+    <td id="plus" onclick="appendOperation(' + ')">+</td>
+    
+</tr>
+
+<tr>
+    <td class="numbers" onclick="appendOperation(0)">0</td>
+    <td class="numbers" onclick="appendOperation(' . ')">,</td>
+    <td class="numbers" onclick="calculateResult()" >=</td>
+    <td id="minus"onclick="appendOperation(' - ')">-</td>
+
+</tr>
+</tr>
+    </TR>
+</table>
+</body>
+</html>
